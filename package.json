@@ -9,6 +9,7 @@
     "react-scripts": "3.0.1"
   },
   "scripts": {
+    "live": "node server.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
