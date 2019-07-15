@@ -6,7 +6,7 @@ To start latest site: `yarn start`
 
 - update package.json homepage.
 - `yarn build`
-- `mv build <snapshotname>`
+- `cp -r build <snapshotname>`
 - add `snapshotname` to server.js array
 
 ## Available Scripts

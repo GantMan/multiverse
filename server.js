@@ -3,7 +3,7 @@ const path = require('path')
 const app = express()
 
 // list of stable snapshots
-const snapshots = ['snap1', 'snap2', 'snap3']
+const snapshots = ['snap1', 'snap2', 'snap3', 'snap4']
 
 // Make latest build accessible like staging
 app.use('/latest/', express.static(path.join(__dirname, 'build')))
