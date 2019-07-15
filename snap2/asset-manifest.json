@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/snap2/static/css/main.2cce8147.chunk.css",
+    "main.js": "/snap2/static/js/main.12e704f9.chunk.js",
+    "main.js.map": "/snap2/static/js/main.12e704f9.chunk.js.map",
+    "runtime~main.js": "/snap2/static/js/runtime~main.a4a49c98.js",
+    "runtime~main.js.map": "/snap2/static/js/runtime~main.a4a49c98.js.map",
+    "static/js/2.d4a211be.chunk.js": "/snap2/static/js/2.d4a211be.chunk.js",
+    "static/js/2.d4a211be.chunk.js.map": "/snap2/static/js/2.d4a211be.chunk.js.map",
+    "index.html": "/snap2/index.html",
+    "precache-manifest.d7396c4cc370ddfbe995122887a1c030.js": "/snap2/precache-manifest.d7396c4cc370ddfbe995122887a1c030.js",
+    "service-worker.js": "/snap2/service-worker.js",
+    "static/css/main.2cce8147.chunk.css.map": "/snap2/static/css/main.2cce8147.chunk.css.map",
+    "static/media/logo.svg": "/snap2/static/media/logo.5d5d9eef.svg"
+  }
+}
