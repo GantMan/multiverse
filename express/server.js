@@ -28,7 +28,10 @@ snapshots.map(snapshotName => {
 })
 
 // default to latest stable
-app.get('/', (_req, res) => res.redirect(`/${snapshots.slice(-1)}`))
+router.get('/', (_req, res) => res.redirect(`'/.netlify/functions/server'/${snapshots.slice(-1)}`))
+
+// Doesn't redirect, just gives proper file
+// app.get('/', (_req, res) => res.sendFile(path.join(__dirname, '../', snapshots.slice(-1), 'index.html')))
 
 // Setup lambda function
 app.use(bodyParser.json())
