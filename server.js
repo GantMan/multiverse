@@ -1,4 +1,5 @@
 const express = require('express')
+const serverless = require('serverless-http')
 const path = require('path')
 const app = express()
 
@@ -25,5 +26,6 @@ snapshots.map(snapshotName => {
 // default to latest stable
 app.get('/', (_req, res) => res.redirect(`/${snapshots.slice(-1)}`))
 
+serverless(app)
 app.listen(process.env.PORT || 8080)
 console.log('live')
