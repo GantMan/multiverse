@@ -1,2 +1,3 @@
 [build]
-  command = "yarn && yarn build && yarn live"
+  command = "yarn && yarn build && yarn expressbuild"
+  functions = "functions"
