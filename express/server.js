@@ -28,7 +28,7 @@ snapshots.map(snapshotName => {
 })
 
 // default to latest stable
-router.get('/', (_req, res) => res.redirect(`/${snapshots.slice(-1)}`))
+app.get('/', (_req, res) => res.redirect(`/${snapshots.slice(-1)}`))
 
 // Setup lambda function
 app.use(bodyParser.json())
