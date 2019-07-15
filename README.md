@@ -1,4 +1,13 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+To start all sites: `node server.js`
+
+To start latest site: `yarn start`
+
+## To snapshot
+
+- update package.json homepage.
+- `yarn build`
+- `mv build <snapshotname>`
+- add `snapshotname` to server.js array
 
 ## Available Scripts
 
