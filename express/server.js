@@ -40,10 +40,16 @@ snapshots.map(snapshotName => {
 //   res.end()
 // })
 
-// Doesn't redirect, just gives proper file
-router.get('/', (_req, res) =>
-  res.sendFile(path.join(__dirname, '../', snapshots.slice(-1), 'index.html'))
-)
+// // Doesn't redirect, just gives proper file
+// router.get('/', (_req, res) =>
+//   res.sendFile(path.join(__dirname, '../', snapshots.slice(-1), 'index.html'))
+// )
+
+router.get('/', (req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/html' })
+  res.write('<h1>Hello from Express.js!</h1>')
+  res.end()
+})
 
 // Setup lambda function
 app.use(bodyParser.json())
