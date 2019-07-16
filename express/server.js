@@ -28,16 +28,16 @@ snapshots.map(snapshotName => {
 })
 
 // default to latest stable
+// router.get('/', (req, res) => {
+//   const host = req.get('Host')
+//   return res.redirect(301, `${host}/${snapshots.slice(-1)}`)
+// })
+
 router.get('/', (req, res) => {
   const host = req.get('Host')
-  return res.redirect(301, `${host}/${snapshots.slice(-1)}`)
+  res.writeHead(301, { Location: `${host}/${snapshots.slice(-1)}` })
+  res.end()
 })
-
-// router.get('/', (req, res) => {
-//   res.writeHead(301, { 'Content-Type': 'text/html' });
-//   res.write('<h1>Hello from Express.js!</h1>');
-//   res.end();
-// });
 
 // Doesn't redirect, just gives proper file
 // app.get('/', (_req, res) => res.sendFile(path.join(__dirname, '../', snapshots.slice(-1), 'index.html')))
