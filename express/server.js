@@ -34,8 +34,9 @@ snapshots.map(snapshotName => {
 // })
 
 router.get('/', (req, res) => {
-  const host = req.get('Host')
-  res.writeHead(301, { Location: `${host}/${snapshots.slice(-1)}` })
+  const fullUrl =
+    req.protocol + '://' + req.get('host') + '/' + snapshots.slice(-1)
+  res.writeHead(301, { Location: fullUrl })
   res.end()
 })
 
