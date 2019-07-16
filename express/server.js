@@ -18,7 +18,7 @@ router.get('/latest/*', (_req, res) =>
 
 // setup each snapshot build folder
 snapshots.map(snapshotName => {
-    router.use(
+  router.use(
     `/${snapshotName}/`,
     express.static(path.join(__dirname, '../', snapshotName))
   )
@@ -30,8 +30,8 @@ snapshots.map(snapshotName => {
 // default to latest stable
 router.get('/', (req, res) => {
   const host = req.get('Host')
-  res.redirect(301, `${host}/${snapshots.slice(-1)}`)
-}
+  return res.redirect(301, `${host}/${snapshots.slice(-1)}`)
+})
 
 // router.get('/', (req, res) => {
 //   res.writeHead(301, { 'Content-Type': 'text/html' });
@@ -44,7 +44,7 @@ router.get('/', (req, res) => {
 
 // Setup lambda function
 app.use(bodyParser.json())
-app.use('/.netlify/functions/server', router)  // path must route to lambda
+app.use('/.netlify/functions/server', router) // path must route to lambda
 
 module.exports = app
 module.exports.handler = serverless(app)
