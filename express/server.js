@@ -47,9 +47,7 @@ snapshots.map(snapshotName => {
 
 router.get('/', (req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html' })
-  res.write(
-    `<script>window.location.replace("/${snapshots.slice(-1)}")</script>`
-  )
+  res.write(`<script>top.location.href = "/${snapshots.slice(-1)}"</script>`)
   res.end()
 })
 
