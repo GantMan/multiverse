@@ -33,15 +33,17 @@ snapshots.map(snapshotName => {
 //   return res.redirect(301, `${host}/${snapshots.slice(-1)}`)
 // })
 
-router.get('/', (req, res) => {
-  const fullUrl =
-    req.protocol + '://' + req.get('host') + '/' + snapshots.slice(-1)
-  res.writeHead(301, { Location: fullUrl })
-  res.end()
-})
+// router.get('/', (req, res) => {
+//   const fullUrl =
+//     req.protocol + '://' + req.get('host') + '/' + snapshots.slice(-1)
+//   res.writeHead(301, { Location: fullUrl })
+//   res.end()
+// })
 
 // Doesn't redirect, just gives proper file
-// app.get('/', (_req, res) => res.sendFile(path.join(__dirname, '../', snapshots.slice(-1), 'index.html')))
+router.get('/', (_req, res) =>
+  res.sendFile(path.join(__dirname, '../', snapshots.slice(-1), 'index.html'))
+)
 
 // Setup lambda function
 app.use(bodyParser.json())
