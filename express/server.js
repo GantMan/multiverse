@@ -1,7 +1,7 @@
 const express = require('express')
 const serverless = require('serverless-http')
 const app = express()
-const router = require('./router')
+const router = require('../router')
 
 // Setup lambda function
 app.use(bodyParser.json())
