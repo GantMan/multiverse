@@ -3,7 +3,6 @@ const serverless = require('serverless-http')
 const path = require('path')
 const bodyParser = require('body-parser')
 const app = express()
-const newRouter = require('./router')
 
 // list of stable snapshots
 const snapshots = ['snap1', 'snap2', 'snap3', 'snap4']
