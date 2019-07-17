@@ -1,6 +1,8 @@
-To start all sites: `node server.js`
+# Running this project
 
-To start latest site: `yarn start`
+* To start all sites locally: `yarn startLocal`
+* To start latest site: `yarn startDev`
+* Netlify uses `yarn start` which uses lamda services
 
 ## To snapshot
 
