@@ -54,7 +54,7 @@ router.get('/', (req, res) => {
 
 // Setup lambda function
 app.use(bodyParser.json())
-app.use('/.netlify/functions/server', newRouter) // path must route to lambda
+app.use('/.netlify/functions/server', router) // path must route to lambda
 
 module.exports = app
 module.exports.handler = serverless(app)
