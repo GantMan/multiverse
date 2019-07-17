@@ -7,12 +7,6 @@ const snapshots = ['snap1', 'snap2', 'snap3', 'snap4']
 // Router so we can use netlify
 const router = express.Router()
 
-// Make latest build accessible like staging
-router.use('/latest/', express.static(path.join(__dirname, '../', 'build')))
-router.get('/latest/*', (_req, res) =>
-  res.sendFile(path.join(__dirname, 'build', '../', 'index.html'))
-)
-
 // setup each snapshot build folder
 snapshots.map(snapshotName => {
   router.use(
@@ -24,7 +18,7 @@ snapshots.map(snapshotName => {
   )
 })
 
-router.get('/', (req, res) => {
+router.get('/', (_req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html' })
   res.write(`<script>top.location.href = "/${snapshots.slice(-1)}"</script>`)
   res.end()
