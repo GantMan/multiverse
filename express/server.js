@@ -1,11 +1,15 @@
 const express = require('express')
 const serverless = require('serverless-http')
 const app = express()
-const router = require('../router')
+const routerFunc = require('../router')
+
+// Router so we can use netlify
+const router = express.Router()
 
 // Setup lambda function
 app.use(bodyParser.json())
-app.use('/.netlify/functions/server', router) // path must route to lambda
+// path must route to lambda
+app.use('/.netlify/functions/server', routerFunc(router, express)) 
 
 module.exports = app
 module.exports.handler = serverless(app)
