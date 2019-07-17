@@ -5,7 +5,7 @@ const app = express()
 const router = require('../router')
 
 // Setup lambda function
-app.use(bodyParser.json())
+// app.use(bodyParser.json())
 app.use('/.netlify/functions/server', router) // path must route to lambda
 
 module.exports = app

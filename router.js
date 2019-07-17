@@ -9,6 +9,7 @@ const snapshots = ['snap1', 'snap2', 'snap3', 'snap4']
 
 // Depending on import this could be in current path or up a folder
 // this function checks for existence in both paths, returns correct one
+// this allows us to use the same router for local and netlify
 const mister2check = (...checkPath) => {
   const firstCheck = path.join(__dirname, '../', ...checkPath)
   if (fs.existsSync(firstCheck)) return firstCheck
