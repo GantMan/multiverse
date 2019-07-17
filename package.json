@@ -2,7 +2,7 @@
   "name": "multiverse",
   "version": "0.1.0",
   "author": "Gant Laborde",
-  "main": "functions/netlify.js",
+  "main": "functions/server.js",
   "private": true,
   "dependencies": {
     "express": "^4.17.1",
