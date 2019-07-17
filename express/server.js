@@ -1,8 +1,5 @@
 const express = require('express')
-const serverless = require('serverless-http')
 const path = require('path')
-const bodyParser = require('body-parser')
-const app = express()
 
 // list of stable snapshots
 const snapshots = ['snap1', 'snap2', 'snap3', 'snap4']
@@ -27,33 +24,10 @@ snapshots.map(snapshotName => {
   )
 })
 
-// default to latest stable
-// router.get('/', (req, res) => {
-//   const host = req.get('Host')
-//   return res.redirect(301, `${host}/${snapshots.slice(-1)}`)
-// })
-
-// router.get('/', (req, res) => {
-//   // const fullUrl =
-//   //   req.protocol + '://' + req.get('host') + '/' + snapshots.slice(-1)
-//   res.writeHead(301, { Location: 'https://twitter.com/home' })
-//   res.end()
-// })
-
-// // Doesn't redirect, just gives proper file
-// router.get('/', (_req, res) =>
-//   res.sendFile(path.join(__dirname, '../', snapshots.slice(-1), 'index.html'))
-// )
-
 router.get('/', (req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html' })
   res.write(`<script>top.location.href = "/${snapshots.slice(-1)}"</script>`)
   res.end()
 })
 
-// Setup lambda function
-app.use(bodyParser.json())
-app.use('/.netlify/functions/server', router) // path must route to lambda
-
-module.exports = app
-module.exports.handler = serverless(app)
+module.exports = router
