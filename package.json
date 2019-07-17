@@ -15,7 +15,8 @@
   "scripts": {
     "expressbuild": "netlify-lambda build express",
     "start": "node server.js",
-    "startdev": "react-scripts start",
+    "startLocal": "node localServer.js",
+    "startDev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
