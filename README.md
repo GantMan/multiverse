@@ -1,15 +1,12 @@
 # Running this project
 
-* To start all sites locally: `yarn startLocal`
-* To start latest site: `yarn startDev`
-* Netlify uses `yarn start` which uses lamda services
+- To start all sites locally: `yarn startLocal`
+- To start latest site: `yarn startDev`
+- Netlify uses `yarn start` which uses lamda services
 
 ## To snapshot
 
-- update package.json homepage.
-- `yarn build`
-- `cp -r build <snapshotname>`
-- add `snapshotname` to server.js array
+`yarn snapapp` and then follow directions
 
 ## Available Scripts
 

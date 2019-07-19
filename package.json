@@ -15,6 +15,7 @@
   "scripts": {
     "expressbuild": "netlify-lambda build express",
     "start": "node server.js",
+    "snapapp": "node snapapp/bin/snapapp",
     "startLocal": "node localServer.js",
     "startDev": "react-scripts start",
     "build": "react-scripts build",
@@ -37,5 +38,11 @@
     ]
   },
   "proxy": "http://localhost:8080",
-  "homepage": "/snap4"
+  "homepage": "/snap4",
+  "snapshots": [
+    "snap1",
+    "snap2",
+    "snap3",
+    "snap4"
+  ]
 }
